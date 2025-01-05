@@ -1,0 +1,383 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+/* Styling for the Suggestions container */
+.Suggestions {
+  max-height: 200px; /* Fixed height for scrolling */
+  overflow-y: auto; /* Enables vertical scrolling */
+  padding: 10px;
+  border: 1px solid #ddd; /* Light border for separation */
+  border-radius: 8px;
+  background-color: #fafafa; /* Light background for contrast */
+  margin-top: 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Adds spacing between each suggestion for better readability */
+.Suggestions br {
+  margin-bottom: 10px;
+}
+
+.Suggestions a {
+  color: orange; /* Blue color for links */
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.Suggestions a:hover {
+  color: rgb(134, 90, 10); /* Darker blue for hover effect */
+  text-decoration: underline;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+header img {
+  width: 30%;
+  border-radius: 50%;
+  border: 6px solid black !important;
+}
+
+body.dark-mode header img {
+  width: 30%;
+  border-radius: 50%;
+  border: 6px solid white !important;
+}
+
+button#darkModeToggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 50%;
+  width: 35px;  /* Increased size for visibility */
+  height: 35px;  /* Increased size for visibility */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;  /* Slightly larger icon */
+  cursor: grab;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  z-index: 9999;  /* Ensure it's in front of everything */
+  border: 3px solid black;  /* Border to create a visible circle */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Add shadow for better visibility */
+}
+
+body.dark-mode button#darkModeToggle {
+  background-color: #000;
+  color: #fff;
+  border: 3px solid white;  /* Border color stays consistent in dark mode */
+}
+
+button#darkModeToggle:hover {
+  transform: scale(1.1);
+}
+
+/* Header Styles */
+header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 5px 0;
+}
+
+header a {
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+/* Gallery Section */
+#gallery {
+  padding: 10px;
+}
+
+#gallery h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  grid-auto-rows: auto;
+  padding: 10px;
+}
+
+/* Individual Gallery Card */
+.gallery-item {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+body.dark-mode .gallery-item {
+  background-color: #121212;
+  border: 1px solid #333;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Box Layout */
+.image-boxes {
+  display: flex;
+  flex-wrap: wrap;  /* Allow multiple images to wrap */
+  gap: 10px;
+  justify-content: flex-start; /* Align images to the start */
+  width: 100%;
+}
+
+.image-box {
+  width: 300px;  /* Fixed width for all image boxes */
+  display: flex;
+  height: 130px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+body.dark-mode .image-box {
+  border: 1px solid #444;
+}
+
+.image-box img {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;  /* 1:1 aspect ratio */
+  transition: transform 0.3s;
+}
+
+.image-box img:hover {
+  transform: scale(1.05);
+}
+
+/* Title and Description */
+.title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 5px 0;
+  text-align: left; /* Ensuring title is aligned to the left */
+}
+
+.description {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin: 5px 0;
+  color: #555;
+  text-align: left; /* Ensuring description is aligned to the left */
+}
+
+.autfav {
+  color: orange;
+}
+
+body.dark-mode .description {
+  color: #bbb;
+}
+
+.description p {
+  margin: 0.5px 0;
+}
+
+/* View Post Button */
+button {
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+button a {
+  display: block; /* Ensure button takes full width */
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: background-color 0.3s, color 0.3s;
+  text-align: left; /* Align button text to the left */
+}
+
+body.dark-mode button a {
+  background-color: #fff;
+  color: #000;
+}
+
+button a:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark-mode button a:hover {
+  background-color: #ddd;
+  color: #000;
+}
+
+/* Date Section */
+.date {
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-top: 10px;
+  color: #777;
+}
+
+body.dark-mode .date {
+  color: #aaa;
+}
+
+/* Gallery Item Layout */
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Adjusting image boxes and layout to maintain left-alignment */
+.image-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  width: 100%; /* Ensure the container takes full width */
+}
+
+.image-box {
+  flex: 1 1 calc(50% - 10px); /* Each image box takes 50% width minus the gap */
+  display: flex;
+  height: 130px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+body.dark-mode .image-box {
+  border: 1px solid #444;
+}
+
+.image-box img {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  transition: transform 0.3s;
+}
+
+.image-box img:hover {
+  transform: scale(1.05);
+}
+
+/* Gallery Content Alignment */
+.gallery-item .title,
+.gallery-item .description,
+.gallery-item button {
+  text-align: left;
+}
+
+.gallery-item .date {
+  text-align: right; /* Ensures date stays aligned to the right */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Adjust grid for smaller screens */
+  .gallery-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .gallery-item {
+    max-width: 90%;
+  }
+
+  .image-box img {
+    height: 250px; /* Adjust image height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  .gallery-container {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .image-box img {
+    height: 150px; /* Adjusted for small screens */
+  }
+}
